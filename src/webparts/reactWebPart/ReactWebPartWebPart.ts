@@ -21,7 +21,11 @@ export default class ReactWebPartWebPart extends BaseClientSideWebPart<IReactWeb
     const element: React.ReactElement<IReactWebPartProps > = React.createElement(
       ReactWebPart,
       {
-        description: this.properties.description
+        description: this.properties.description,
+        absoluteUrl: this.context.pageContext.web.absoluteUrl,
+        sitetitle: this.context.pageContext.web.title,
+        username: this.context.pageContext.user.displayName,
+        relativeurl: this.context.pageContext.web.serverRelativeUrl
       }
     );
 
